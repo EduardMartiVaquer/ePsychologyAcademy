@@ -1,0 +1,28 @@
+<?php 
+return [
+    'lang_1' => 'Aleman',
+    'lang_2' => 'Inglés',
+    'lang_3' => 'Árabe',
+    'lang_4' => 'Vasco',
+    'lang_5' => 'Búlgaro',
+    'lang_6' => 'Castellano',
+    'lang_7' => 'Catalán',
+    'lang_8' => 'Chino',
+    'lang_9' => 'Francés',
+    'lang_10' => 'Gallego',
+    'lang_11' => 'Georgiano',
+    'lang_12' => 'Griego',
+    'lang_13' => 'Hebreo',
+    'lang_14' => 'Indi',
+    'lang_15' => 'Interpretación del lenguaje de signos',
+    'lang_16' => 'Italiano',
+    'lang_17' => 'Japonés',
+    'lang_18' => 'Neerlandés',
+    'lang_19' => 'Persa',
+    'lang_20' => 'Polonés',
+    'lang_21' => 'Portugués',
+    'lang_22' => 'Rumanés',
+    'lang_23' => 'Ruso',
+    'lang_24' => 'Sueco',
+    'lang_25' => 'Ucrainés'
+];

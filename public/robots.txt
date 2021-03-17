@@ -1,0 +1,6 @@
+Sitemap: https://epsychology.es/sitemap.xml
+User-agent: *
+Disallow: /terms
+Disallow: /privacy
+Disallow: /cookies
+Disallow: /suggestions

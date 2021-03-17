@@ -1,0 +1,11 @@
+{
+	"applinks": {
+    	"apps": [],
+    	"details": [
+	    	{
+				"appID": "FK33Q4B2H7.epsychology.ePsychology",
+				"paths": ["*"]
+	    	}
+    	]
+  	}
+}

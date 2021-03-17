@@ -1,0 +1,21 @@
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap.scss';
+
+//Jquery UI
+@import '~jquery-ui/themes/base/all.css';
+
+//Datepicker
+@import '~@chenfengyuan/datepicker/src/css/datepicker.scss';
+
+//Timepicker
+@import '~timepicker/jquery.timepicker.min.css';
+
+//Style.css
+@import '../../public/css/style.css';
+
+//Font awesome, Material Icons & Ionicons
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
