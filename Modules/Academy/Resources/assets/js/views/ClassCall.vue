@@ -204,7 +204,7 @@ export default {
                         var streamType = this.getTypeFromId(parseInt(event.stream.name.replace('user-camera-', '')));
                         if(this.iamPatient && (streamType != "psychologist")){
                             
-                        } else if((this.iamPatient && streamType == "psychologist") || (this.iamPsychologist && streamType == "patient" && isOnSession) || (!this.iamPatient && !this.iamPsychologist)){
+                        } else if((this.iamPatient && streamType == "psychologist") || (this.iamPsychologist && streamType == "patient" && this.isOnSession) || (!this.iamPatient && !this.iamPsychologist)){
                             var coincidence = app.OTstreams.find(stream => {
                                 return stream.stream.name == event.stream.name;
                             })
