@@ -53,8 +53,8 @@ class ClassesController extends Controller
             $teachers = CourseTeacher::where('course', $request->get('course'))->get();
             $students = CourseStudent::where('course', $request->get('course'))->get();
         } else {
-            $teachers = SubjectTeacher::where('course', $request->get('course'))->get();
-            $students = SubjectStudent::where('course', $request->get('course'))->get();
+            $teachers = SubjectTeacher::where('subject', $request->get('subject'))->get();
+            $students = SubjectStudent::where('subject', $request->get('subject'))->get();
         }
 
         $add_class = false;
