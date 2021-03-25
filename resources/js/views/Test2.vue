@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Peer from 'peerjs';
+
 export default {
     props: [],
     template: "#test-2-template",
@@ -141,7 +141,7 @@ export default {
     },
     created(){
         $(document).ready(() => {
-            this.peer = new Peer(`user-${this.user.id}`);
+            
             this.connectToPeer(this.user.id == 1 ? 4 : 1)
         });
     },

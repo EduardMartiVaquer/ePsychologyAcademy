@@ -106,7 +106,8 @@ export default {
             canEndRecognizer: false,
             transcript: [],
             transcriptSenderTimeout: null,
-            faceModel: null
+            faceModel: null,
+            isOnSession: false
         }
     },
     computed: {
@@ -203,9 +204,14 @@ export default {
                         var streamType = this.getTypeFromId(parseInt(event.stream.name.replace('user-camera-', '')));
                         if(this.iamPatient && (streamType != "psychologist")){
                             
-                        } else {
-                            app.OTstreams.push(_.clone(event));
-                            this.subscribeToStream(app.OTstreams.length - 1);
+                        } else if((this.iamPatient && streamType == "psychologist") || (this.iamPsychologist && streamType == "patient" && isOnSession) || (!this.iamPatient && !this.iamPsychologist)){
+                            var coincidence = app.OTstreams.find(stream => {
+                                return stream.stream.name == event.stream.name;
+                            })
+                            if(typeof(coincidence) == "undefined"){
+                                app.OTstreams.push(_.clone(event));
+                                this.subscribeToStream(app.OTstreams.length - 1);
+                            }
                         }
                     }
                 });
@@ -312,10 +318,8 @@ export default {
                     if(this.start == null){
                         this.start = moment();
                     }
-                    var streamType = this.getTypeFromId(parseInt(app.OTstreams[index].stream.name.replace('user-camera-', '')));
-                    if(app.OTstreams[index].stream.name.includes('screen') || (streamType == "patient" && !iamPsychologist) || (streamType == "psychologist" && !iamPatient)){
-                        this.shouldPin = index
-                    }
+                    
+                    this.shouldPin = index
                     window.setTimeout(() => {
                         this.recomputeScreen();
                     }, 100)
@@ -658,8 +662,10 @@ export default {
         loadTf();
         $(document).ready(() => {
             this.$store.state.currentClass.id = this.$route.id;
+            if(this.iamPsychologist){
+                this.isOnSession = true;
+            }
             this.getClassEvent();
-
             // Load Face model
             
         });
